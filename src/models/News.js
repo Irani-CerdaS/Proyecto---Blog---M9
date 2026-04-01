@@ -10,7 +10,11 @@ const News = sequelize.define('News', {
     type: DataTypes.TEXT,
     allowNull: false
   },
-  image_url: {
+  category: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  image: {
     type: DataTypes.STRING,
     allowNull: true
   }
