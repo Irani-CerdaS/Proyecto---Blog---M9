@@ -4,5 +4,5 @@ const config = {
     // EN LA NUBE (Render, etc.): Cuando subas tu backend ('src/') y tu base de datos a internet, 
     // cambia la URL a la que te dé Render y listo. 
     // Ejemplo Crudo: API_URL: 'https://backend-blog-noticias-m9.onrender.com/api'
-    API_URL: '/api'
+    API_URL: 'https://proyecto-blog-m9.onrender.com/api'
 };
