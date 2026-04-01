@@ -4,6 +4,8 @@ const path = require('path');
 require('dotenv').config();
 
 const routes = require('./routes');
+const authRoutes = require('./routes/authRoutes');
+const newsRoutes = require('./routes/newsRoutes');
 const { errorHandler } = require('./middlewares/errorMiddleware');
 const { sequelize } = require('./models');
 
@@ -19,6 +21,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Configurar rutas principales
 app.use('/api', routes);
+app.use('/api/auth', authRoutes);
+app.use('/api/news', newsRoutes);
 
 // Middleware de manejo de errores globales
 app.use(errorHandler);
