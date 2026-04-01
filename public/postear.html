@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Noticia - NewsBlog</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar Minimalista -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark fs-4" href="/">NewsBlog.</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0" id="auth-section">
+                        <!-- Botón Salir u Opciones (Se maneja por JS) -->
+                        <a class="nav-link text-danger" href="#" onclick="logout(event)">Salir</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container py-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <!-- Tarjeta del Formulario -->
+                <div class="card p-4 shadow-sm border-0 rounded-4">
+                    <div class="card-body">
+                        <h2 class="fw-bold mb-4">Escribir Noticia</h2>
+                        
+                        <div id="error-alert" class="alert alert-danger d-none" role="alert"></div>
+
+                        <form id="post-form">
+                            <div class="mb-3">
+                                <label for="title" class="form-label text-muted fw-semibold">Título de la noticia</label>
+                                <input type="text" class="form-control form-control-lg border-0 bg-light" id="title" required placeholder="Ej. El futuro de la IA...">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="category" class="form-label text-muted fw-semibold">Categoría</label>
+                                <input type="text" class="form-control border-0 bg-light" id="category" placeholder="Ej. Tecnología, Diseño...">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="image" class="form-label text-muted fw-semibold">URL de la Imagen (Opcional)</label>
+                                <input type="url" class="form-control border-0 bg-light" id="image" placeholder="https://ejemplo.com/imagen.jpg">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="content" class="form-label text-muted fw-semibold">Contenido</label>
+                                <textarea class="form-control border-0 bg-light" id="content" rows="6" required placeholder="Redacta el cuerpo de la noticia aquí..."></textarea>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg rounded-pill fw-bold">Publicar Ahora</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-white mt-5">
+        <div class="container">
+            <p class="text-muted mb-0 small">&copy; 2026 NewsBlog. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/post.js"></script>
+</body>
+</html>

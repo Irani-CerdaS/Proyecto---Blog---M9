@@ -8,7 +8,7 @@ async function fetchNews() {
     const container = document.getElementById('news-container');
     
     try {
-        const response = await fetch('/api/news');
+        const response = await fetch(`${config.API_URL}/news`);
         if (!response.ok) throw new Error('Error de red al cargar noticias');
         
         const news = await response.json();
