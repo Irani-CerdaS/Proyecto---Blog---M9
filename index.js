@@ -24,8 +24,9 @@ const start = async () => {
     await sequelize.sync({ force: false });
     console.log('Modelos de Sequelize sincronizados correctamente con las relaciones definidas.');
 
-    app.listen(3000, () => {
-      console.log('Servidor escuchando en el puerto 3000');
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log(`Servidor escuchando en el puerto ${PORT}`);
     });
   } catch (error) {
     console.error('Error iniciando la aplicación:', error);
